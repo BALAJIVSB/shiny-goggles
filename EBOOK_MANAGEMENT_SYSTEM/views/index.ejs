@@ -1,0 +1,16 @@
+<%- include ('partials/header') %>
+
+    
+    <ul class="list-group">
+    <% bookList.forEach(function (book){  %>
+      <li class="list-group-item"><a href="/renderer/<%= book['title'] %>" class="list-group-item list-group-item-action"> <%= book['title'] %></a></li>
+    <% }); %>
+</ul>
+
+<form method="post" action="/refresh">
+    <button type="submit" class="btn btn-secondary">Scan for addition</button>
+</form>
+<form method="post" action="/logout">
+  <button type="submit" class="btn btn-secondary">Logout</button>
+</form>
+<%- include ('partials/footer') %>
